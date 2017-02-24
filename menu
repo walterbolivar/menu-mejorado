@@ -1,0 +1,73 @@
+#include <iostream>
+#include <conio.h>
+
+
+using namespace std;
+
+	int contardigitos(int n){
+		int c=0;
+		while(n>0){
+		 n=n/10;
+		 c++;
+		}
+
+		return(c);
+
+	}
+
+
+
+	int contardigitosimpares(int n){
+		int c=0;
+		while(n>0){
+			if(n%2!=0){
+				c++;
+			}
+
+			n=n/10;
+
+		}
+
+		return(c);
+
+	}
+
+	int invertir(int n){
+		int newnro=0,d;
+		while(n>0){
+			d=n%10;
+			newnro=(newnro*10)+d;
+			n=n/10;
+		}
+		return(newnro);
+	}
+
+void main(){
+		int nro,r,i,opcion;
+
+		cout<<"introdusca un numero natural:";
+		cin >> nro;
+
+   do{
+		cout<<".....................menu....................\n";
+        cout<<"1.mostrar digitos\n";
+		cout<<"2.mostrar cantidad de digitos impares\n";
+		cout<<"3. invertir numero\n";
+		cout<<"0.salir\n";
+		cout<<"eliga opcion";
+		cout<<"introducir un numero:";
+		cin>>opcion;
+		switch(opcion){
+		case 1: r=contardigitos(nro);
+				cout<<"la cantidad de digitos de"<<nro<<",es.....>>>:"<<r;
+			    break;
+		case 2: i=contardigitosimpares (nro);
+			    cout<<"la cantidad de digitos impares es:"<<nro<<",es---->>>"<<i;
+				break;
+		case 3: r=invertir(nro);
+			cout<<"el numero invertido es:"<<nro<<", es---->>>"<<r;
+		}
+
+  }while(opcion);
+
+	}
